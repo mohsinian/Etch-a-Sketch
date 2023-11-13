@@ -43,14 +43,21 @@ function getNumber() {
         black.style.background="cornflowerblue";
         rainbow.style.background="white";
     })
-    if(runOnce) createGrid(totalBox,colorFlag);
+    if(runOnce) createGrid(totalBox);
+    else {
+        const miniBox = document.querySelectorAll(".miniBox");
+        miniBox.forEach(box=>{
+            box.remove();
+        })
+        createGrid(totalBox);
+    }
 }
 
 function createGrid(totalBox) {
     runOnce=false;
     if(totalBox>100) totalBox=100;
 if(totalBox<1) totalBox=1;
-const grid = document.querySelector(".grid");
+const grid = document.querySelector(".gridBox");
 for(let i =0;i<totalBox;i++)
 {
 const row = document.createElement("div");
@@ -58,13 +65,10 @@ for(let j=0;j<totalBox;j++)
 {
 const square = document.createElement('div');
 square.className ="miniBox";
-let a = Math.round(960/totalBox);
+let a = Math.round(500/totalBox);
 square.style.height=""+a+"px";
 square.style.width=""+a+"px";
 square.style.background="azure";
-square.style.borderStyle="double";
-square.style.borderColor="cyan"
-square.style.borderWidth ="0.01em";
 row.append(square);
 }
 grid.append(row);
