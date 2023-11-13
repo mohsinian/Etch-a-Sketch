@@ -9,13 +9,17 @@
 </head>
 <body>
     <div class="header">
-        <h2>Etch-a-Sketch</h2>
+        <h2>Pixel Sketch</h2>
     </div>
     <div class="boxInput">
         <label>Box Number in Grid (1 to 100):</label>
 
 <input type="number" id="getNumber" min="1" max="100"/>
 <input type="button" onclick="getNumber()" value="Submit">
+    </div>
+    <div class="colorOptions">
+        <button id="rainbow">Rainbow</button>
+        <button id="black">Black & White</button>
     </div>
     <div class="gridBox">
         <div class="grid">

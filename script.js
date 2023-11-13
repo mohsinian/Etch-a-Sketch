@@ -28,10 +28,22 @@ const pSBC=(p,c0,c1,l)=>{
 //this part was used to make the color darker(end)
 
 var runOnce = true;
-
+var colorFlag=false;
 function getNumber() {
     var totalBox = document.querySelector("#getNumber").value;
-    if(runOnce) createGrid(totalBox);
+    const rainbow = document.querySelector("#rainbow");
+    const black = document.querySelector("#black");
+    rainbow.addEventListener('click',()=>{
+        colorFlag=true;
+        rainbow.style.background="cornflowerblue"
+        black.style.background="white";
+    })
+    black.addEventListener('click',()=>{
+        colorFlag=false;
+        black.style.background="cornflowerblue";
+        rainbow.style.background="white";
+    })
+    if(runOnce) createGrid(totalBox,colorFlag);
 }
 
 function createGrid(totalBox) {
@@ -60,13 +72,30 @@ grid.append(row);
 const miniBox = document.querySelectorAll(".miniBox");
 miniBox.forEach(box=>{
     box.addEventListener('mouseover',()=>{
-        if(box.style.background==="azure")
+        if(!colorFlag)
+        {
+            if(box.style.background==="azure")
         {
             box.style.background="rgb(150,150,150)";
         }
         else
         {
             box.style.background=pSBC(-0.1,box.style.background);
+        }
+        }
+
+        else
+        {
+            if(box.style.background==="azure")
+            {
+                let a = Math.floor(Math.random()*256);
+                let b = Math.floor(Math.random()*256);
+                let c = Math.floor(Math.random()*256);
+                box.style.background = "rgb("+a+","+b+","+c+")";
+            }
+            else {
+                box.style.background=pSBC(-0.1,box.style.background);
+            }
         }
 
     })
