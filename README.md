@@ -6,4 +6,5 @@ There are options for choosing the rgb color mode labeled as rainbow and the tra
 ALso another core functionality if you draw in the same space over and over again the color gets darker. 
 For example the color gets from grey to pitch black after hovering over the mouse in the same spot for several times.
 
-Live Preview: https://mohsinian.github.io/Odin-Etch-a-Sketch/
+Live Preview: https://mohsinian.github.io/Etch-a-Sketch/
+
