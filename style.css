@@ -1,0 +1,32 @@
+body {
+    background-color: blanchedalmond;
+}
+.header {
+    display: flex;
+    margin: 15px;
+    padding: 10px;
+    color: brown;
+    background-color: cornflowerblue;
+    justify-content: center;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 5px;
+}
+.boxInput {
+    display: flex;
+    padding: 4px;
+    gap: 15px;
+    justify-content: center;
+}
+.gridBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid {
+    display: flex;
+    background-color: antiquewhite;
+    width: 960px;
+    height: 960px;
+    margin: 20px;
+}
